@@ -1,6 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:currency_converter/src/converter/domain/repository/i_currency_repository.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'currency_converter_state.dart';
 

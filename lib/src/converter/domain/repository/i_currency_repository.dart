@@ -12,7 +12,9 @@ class ICurrencyRepository extends CurrencyRepository {
   Future<Map<String, double>> getUSDRates() async {
     try {
       Response response = await exchangerateHttpRestClient.get("/USD");
-      return jsonDecode(response.body)['conversion_rates'];
+      Map<String, dynamic> data = jsonDecode(response.body)['conversion_rates'];
+      return data.map((key, value) =>
+          MapEntry<String, double>(key, double.parse(value.toString())));
     } catch (e, _) {
       rethrow;
     }
@@ -22,7 +24,9 @@ class ICurrencyRepository extends CurrencyRepository {
   Future<Map<String, double>> getTRYRates() async {
     try {
       Response response = await exchangerateHttpRestClient.get("/TRY");
-      return jsonDecode(response.body)['conversion_rates'];
+      Map<String, dynamic> data = jsonDecode(response.body)['conversion_rates'];
+      return data.map((key, value) =>
+          MapEntry<String, double>(key, double.parse(value.toString())));
     } catch (e, _) {
       rethrow;
     }
@@ -32,7 +36,9 @@ class ICurrencyRepository extends CurrencyRepository {
   Future<Map<String, double>> getRUBRates() async {
     try {
       Response response = await exchangerateHttpRestClient.get("/RUB");
-      return jsonDecode(response.body)['conversion_rates'];
+      Map<String, dynamic> data = jsonDecode(response.body)['conversion_rates'];
+      return data.map((key, value) =>
+          MapEntry<String, double>(key, double.parse(value.toString())));
     } catch (e, _) {
       rethrow;
     }

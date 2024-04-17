@@ -1,6 +1,5 @@
 part of 'currency_converter_cubit.dart';
 
-@immutable
 abstract class CurrencyConverterState {}
 
 class CurrencyConverterInitial extends CurrencyConverterState {}
